@@ -1,0 +1,51 @@
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+             <!--this expands to fill the empty space if needed -->
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etOne"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etOne"
+                android:id="@+id/etTwo"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/etThree"
+                android:layout_below="@+id/etTwo"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etThree"
+                android:id="@+id/etFour"/>
+        </LinearLayout>
+
+        <!-- this sits at the bottom of the ScrollView,
+        getting pushed out of view if the ScrollView's
+        content is tall enough -->
+
+
+
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/rectangle_1953">
+        </ImageView>
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">@color/colorBlack</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlackTab">#0c0c0c</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorLightGreen">#98c200</color>
+    <color name="colorBrightGreen">#49e872</color>
+
+    <color name="colorGeneralText">#505050</color>
+    <color name="colorDarkText">#9e9e9e</color>
+    <color name="colorHintText">#aaaaaa</color>
+    <color name="colorBorder">#b8b8b8</color>
+    <color name="colorDivider">#cccccc</color>
+    <color name="black_translucent">#64000000</color>
+    <color name="colorLemon">#cea006</color>
+    <color name="colorBlue">#367bc8</color>
+    <color name="colorLightBlack">#4a4a4a</color>
+    <color name="colorRed">#FF6666</color>
+
+    <drawable name="clr_normal">@color/colorBlack</drawable>
+    <drawable name="clr_pressed">@color/colorWhite</drawable>
+    <color name="color_hint_text">#9c9c9c</color>
+
+    <color name="shimmer_background_color">#b1b1b1</color>
+</resources>
