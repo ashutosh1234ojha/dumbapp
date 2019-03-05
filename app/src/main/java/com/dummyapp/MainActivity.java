@@ -114,10 +114,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         etCard=findViewById(R.id.etCard);
-        ABC abc=new ABC();
-        abc.setfNmae("ASHUTOSH");
+//        ABC abc=new ABC();
+//        abc.setfNmae("ASHUTOSH");
         Bundle bundle=new Bundle();
-        bundle.putParcelable("NAME",abc);
+//        bundle.putParcelable("NAME",abc);
         Intent intent=new Intent(MainActivity.this,SubActivity.class);
         intent.putExtras(bundle);
         startActivity(intent);

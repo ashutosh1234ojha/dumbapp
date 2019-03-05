@@ -10,6 +10,12 @@ import android.os.Parcelable;
 public  class ABC implements Parcelable {
     String fNmae;
     String lNmae;
+    final static int  i;
+
+    static {
+        i=8;
+    }
+
 
     public String getfNmae() {
         return fNmae;
@@ -31,7 +37,8 @@ public  class ABC implements Parcelable {
         dest.writeString(this.lNmae);
     }
 
-    public ABC() {
+    public int ABC() {
+      return 0;
     }
 
     protected ABC(Parcel in) {

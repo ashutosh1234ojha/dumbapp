@@ -28,6 +28,6 @@ public class CustomClusterRenderer extends DefaultClusterRenderer<ClusterItemObj
         final BitmapDescriptor markerDescriptor =
         BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE);
 
-        markerOptions.icon(markerDescriptor).snippet(item.getName());
+//        markerOptions.icon(markerDescriptor).snippet(item.getName());
     }
 }

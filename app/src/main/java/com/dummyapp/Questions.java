@@ -8,6 +8,8 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Vector;
 
 /**
  * Created by cl-macmini-86 on 9/28/17.
@@ -15,13 +17,25 @@ import java.util.Collections;
 
 public class Questions extends AppCompatActivity {
 
+    int no = 1, count = 0;
+    volatile int a = 50;
+    final private int c = 6;
+
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitiy_sub);
+        setContentView(R.layout.constraint_layout);
+
+
+        int a = 5;
+        Number c = a;
 
         String bigArray[] = {"1000021020", "10021021", "1000021022", "81000021023"};
         Log.d("Tag", bigSum(4, bigArray) + "Sum");
+
+        Vector vector = new Vector(5, 2);
+        ArrayList arrayList = new ArrayList(1);
+        HashSet hashSet = new HashSet(5, 2);
 
         int[] input = {6, 2, 5};
 //        quicksort(input, 0, 2);
@@ -36,80 +50,266 @@ public class Questions extends AppCompatActivity {
 //
 //
 //        subString();
-        bubble();
-        Log.d("Anagram",  anagram()+"");
 
+        bubble();
+        Log.d("Anagram", anagram() + "");
+
+        Log.d("Palindrem", check() + "");
+        check();
+
+
+        replace();
+
+        printNo();
+
+        removeDuplicatedWords();
+
+        Person person = new Person();
+
+        person.setName("ashutosh");
+        Log.d("Person", person.getName() + " before passing");
+        Log.d("Person", a + " before passing");
+        Log.d("Person", person.getName() + " after passing");
+        Log.d("Person", a + " after passing");
+
+
+        print();
+
+        pattern1(10);
+
+    }
+
+
+    void pattern1(int n) {
+//        int count=10;
+//        for(int i=0;i<n;i++){
+//
+//            for(int j=0;j<n;j++){
+//
+//                if(i-j>=0){
+//                    System.out.print("\t");
+//                }else {
+//                    System.out.print(count--+" ");
+//
+//                }
+//
+//                System.out.println("\n");
+//
+//            }
+//        }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+
+                if((n-1)-j<=i){
+                    System.out.print("*");
+
+                }else {
+                    System.out.print(" ");
+
+                }
+
+            }
+            System.out.println("\n");
+
+        }
+
+    }
+
+    private void removeDuplicatedWords() {
+        String input = "ashutosh is geek is ashutosh geek";
+
+        String[] inputArray = input.split(" ");
+        HashSet<String> hashSet = new HashSet<>();
+
+//        arrayList.addAll(Arrays.asList(inputArray));
+
+        //            Log.d("Duplicated",  ""+inputArray[i]);
+        hashSet.addAll(Arrays.asList(inputArray));
+
+        for (final String aHashSet : hashSet) {
+            Log.d("Duplicated", "" + aHashSet);
+
+        }
+//        ArrayList<String> arrayList=inputArray.a
+
+    }
+
+//    ArrayList<Integer> list = Arrays.stream(inputArray).boxed().collect(Collectors.toList());
+
+    private void object(final Person person, final int a) {
+
+        Log.d("Person", person.getName() + " before change");
+
+        person.setName("rahul");
+
+        Log.d("Person", person.getName() + " after change");
+
+    }
+
+    private void printNo() {
+        int a = 3, b = 2, digit = 1;
+
+
+        String output = "2,3,22,23,32,33,222,223,232,233,323,332,333";
+
+        if (isContained(3, 2)) {
+            count++;
+            if (digit == count) {
+                Log.d("Output", String.valueOf(no));
+                Log.d("Output", String.valueOf(no).length() + " length");
+                return;
+            }
+        }
+
+        ++no;
+        printNo();
+    }
+
+    private boolean isContained(final int... a) {
+        boolean isFalse = false;
+
+        for (int i = 0; i < String.valueOf(no).length(); i++) {
+//            boolean isFalse=false;
+            for (int j = 0; j < a.length; j++) {
+                if ((Character.getNumericValue(String.valueOf(no).charAt(i)) == a[j])) {
+                    isFalse = true;
+                    break;
+                } else {
+                    isFalse = false;
+                }
+            }
+            if (!isFalse)
+                return false;
+
+//            return isFalse;
+        }
+
+        return true;
+
+    }
+
+    private void replace() {
+        String replace = "ram";
+        StringBuilder replacement = new StringBuilder();
+        for (int i = 0; i < replace.length(); i++) {
+            replacement.append("*");
+        }
+
+
+        String input = "ram is a good boy. Ram need food.";
+
+        input.replace("ram", replacement);
+
+        String[] splittedInput = input.split(" ");
+
+        for (int i = 0; i < splittedInput.length; i++) {
+
+            if (replace.equalsIgnoreCase(splittedInput[i])) {
+                splittedInput[i] = String.valueOf(replacement);
+            }
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        String output = "";
+
+        for (int i = 0; i < splittedInput.length; i++) {
+
+            stringBuilder.append(splittedInput[i] + " ");
+
+            output = output + " " + splittedInput[i];
+        }
+        Log.d("Output", stringBuilder + " ");
+        Log.d("Output", output + " ");
 
 
     }
 
+    private boolean check() {
+        String str = "madam";
+        int len = str.length();
+        int min = len / 2;
+        boolean isEven = len % 2 == 0;
+
+        int count;
+        if (isEven) {
+            count = len / 2;
+        } else {
+            count = (len / 2) + 1;
+
+        }
+
+        for (int i = 0; i < count; i++) {
+            if (str.charAt(i) != str.charAt(len - 1 - i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private boolean anagram() {
-        String str1="abc";
-        String str2="Abc";
+        String str1 = "abc";
+        String str2 = "Abc";
 
-        int diff=0;
+        int diff = 0;
 
-        if(str1.length()==str2.length()){
-            for(int i=0;i<str1.length();i++){
+        if (str1.length() == str2.length()) {
+            for (int i = 0; i < str1.length(); i++) {
 
-                Log.d("Anagram",  str1.charAt(i)+"  str1");
-                Log.d("Anagram",  str2.charAt(i)+"  str2");
+                Log.d("Anagram", str1.charAt(i) + "  str1");
+                Log.d("Anagram", str2.charAt(i) + "  str2");
 
-                int a=str1.charAt(i);
+                int a = str1.charAt(i);
 
-                diff  =diff+str1.charAt(i)-str2.charAt(i);
+                diff = diff + str1.charAt(i) - str2.charAt(i);
             }
 
-            if(diff==0)
-            {
+            if (diff == 0) {
                 return true;
-            }else {
-                Log.d("Anagram",  diff+"  values");
+            } else {
+                Log.d("Anagram", diff + "  values");
 
                 return false;
             }
-        }else {
+        } else {
             return false;
         }
     }
 
     private void bubble() {
-        int arr[]={7,2,-1,4,8,0};
+        int arr[] = {7, 2, -1, 4, 8, 0};
 
-        Log.d("Bubble",Arrays.toString(arr)+" before sorting");
+        Log.d("Bubble", Arrays.toString(arr) + " before sorting");
 
-        for(int i=0;i<arr.length;i++){
+        for (int i = 0; i < arr.length; i++) {
 
-            for(int j=i+1;j<arr.length;j++){
+            for (int j = i + 1; j < arr.length; j++) {
 
-                if(arr[i]<arr[j]){
-                    int temp=arr[i];
-                    arr[i]=arr[j];
-                    arr[j]=temp;
+                if (arr[i] < arr[j]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
                 }
             }
         }
-        Log.d("Bubble",Arrays.toString(arr)+" after sorting");
+        Log.d("Bubble", Arrays.toString(arr) + " after sorting");
     }
 
     /**
-     *
      * &
      * &&
      * &&&
      * &
      * &
-     *
      */
     private void pattern() {
 
-        int arr[]={5,4,3,2,1};
+        int arr[] = {5, 4, 3, 2, 1};
 
-        Log.d("Tag",Arrays.toString(arr)+" before sorting");
-        sort(arr,0,arr.length-1);
+        Log.d("Tag", Arrays.toString(arr) + " before sorting");
+        sort(arr, 0, arr.length - 1);
 
-        Log.d("Tag",Arrays.toString(arr)+" after sorting");
-
+        Log.d("Tag", Arrays.toString(arr) + " after sorting");
 
     }
 
@@ -119,64 +319,64 @@ public class Questions extends AppCompatActivity {
 //            return;
 //        }
 
-        if(start<end){
-            int m=(start+end)/2;
+        if (start < end) {
+            int m = (start + end) / 2;
 
-            sort(arr,start,m);
-            sort(arr,m+1,end);
-            add(arr,start,m,end);
+            sort(arr, start, m);
+            sort(arr, m + 1, end);
+            add(arr, start, m, end);
 
         }
 
     }
 
     private void add(final int[] arr, final int start, final int m, final int end) {
-        int left[]=new int[m+1];
-        int right[]=new int[end-m];
-        int k=0;
-        for(int i=0;i<left.length;i++){
-            left[i]=arr[start+i];
+        int left[] = new int[m + 1];
+        int right[] = new int[end - m];
+        int k = 0;
+        for (int i = 0; i < left.length; i++) {
+            left[i] = arr[start + i];
         }
 
 
-        for(int i=0;i<right.length;i++){
-            right[i]=arr[end+start+i];
+        for (int i = 0; i < right.length; i++) {
+            right[i] = arr[end + start + i];
         }
 
 
-        if(left.length<right.length){
-            for(int i=0;i<left.length;i++){
+        if (left.length < right.length) {
+            for (int i = 0; i < left.length; i++) {
 
-                if(left[i]<right[i]){
-                    arr[k]=left[i];
-                }else {
-                    arr[k]=right[i];
+                if (left[i] < right[i]) {
+                    arr[k] = left[i];
+                } else {
+                    arr[k] = right[i];
 
                 }
                 k++;
             }
 
-            for(int i=left.length;i<right.length;i++){
-                arr[k]=right[i];
+            for (int i = left.length; i < right.length; i++) {
+                arr[k] = right[i];
                 k++;
             }
-        }else {
-            for(int i=0;i<right.length;i++){
+        } else {
+            for (int i = 0; i < right.length; i++) {
 
-                if(left[i]<right[i]){
-                    arr[k++]=left[i];
-                    arr[k]=right[i];
-                }else {
-                    arr[k++]=right[i];
-                    arr[k]=left[i];
+                if (left[i] < right[i]) {
+                    arr[k++] = left[i];
+                    arr[k] = right[i];
+                } else {
+                    arr[k++] = right[i];
+                    arr[k] = left[i];
 
 
                 }
                 k++;
             }
 
-            for(int i=right.length;i<left.length;i++){
-                arr[k]=left[i];
+            for (int i = right.length; i < left.length; i++) {
+                arr[k] = left[i];
                 k++;
             }
         }
@@ -680,6 +880,44 @@ and r is the last index of array.
         return y;
     }
 
+    class Person {
+        String name = "sadf";
+
+
+        public Person() {
+
+        }
+
+        public String getName() {
+
+
+            return name;
+        }
+
+        public void setName(final String name) {
+            this.name = name;
+        }
+    }
+
+    void print() {
+        int count = 10;
+        for (int i = 0; i < 4; i++) {
+
+
+            for (int j = 0; j < 4; j++) {
+
+                if (j < i) {
+                    System.out.print("\t");
+                } else {
+                    System.out.print("" + count--);
+
+                }
+
+            }
+            System.out.print("\n");
+
+        }
+    }
 }
 
 

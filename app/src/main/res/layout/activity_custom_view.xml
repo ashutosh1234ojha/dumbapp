@@ -9,7 +9,7 @@
 
     <com.dummyapp.customview.CustomView
 
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
         custom:shape="square"
         android:layout_gravity="center_vertical"

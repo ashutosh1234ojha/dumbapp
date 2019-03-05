@@ -29,6 +29,7 @@ public class DownloadActivity extends AppCompatActivity {
     private Integer notificationID = 100;
     private NotificationManager notificationManager;
     private Notification notification;
+    private PauseDownload pauseDownload;
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class DownloadActivity extends AppCompatActivity {
         });
 
         setNotificationBuilder();
+
 
 
 

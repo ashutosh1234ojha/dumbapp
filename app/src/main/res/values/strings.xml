@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">DummyApp</string>
+
+        <string name="ga_trackingId" translatable="false">UA-120537356-1</string>
+
     <string name="google_maps_key">AIzaSyA2b1cZXleSVDWFEpe9jknNNUmI9e7uYOA</string>
     <string name="facebook_app_id">1399687486755645</string>
     <string name="third">Another excellent use of the CoordinatorLayout is with the CollapsingToolbar and Appbar. The CollapsingToolbar is another of the amazing features of the Android Support Design Library. For this activity, we are going to build a layout with a FAB that is anchored

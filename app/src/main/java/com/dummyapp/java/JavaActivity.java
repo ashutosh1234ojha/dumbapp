@@ -13,6 +13,7 @@ import com.dummyapp.R;
 
 public class JavaActivity  extends AppCompatActivity{
 
+    transient int a=0;
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,4 +28,10 @@ public class JavaActivity  extends AppCompatActivity{
         Log.e("Tag",b+"  b");
 
     }
+
+   class Base{
+        private int a=3;
+
+        class Inner{ }
+   }
 }

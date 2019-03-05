@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="130dp"/>
+
+    <ImageView
+        android:id="@+id/sun_image"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:src="@drawable/bitmap"
+        app:layout_constraintVertical_bias=".5"
+        android:layout_marginTop="@dimen/_156dp"
+        android:layout_marginLeft="150dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/sun_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="ruf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="@id/sun_image"/>
+
+    <ImageView
+        android:id="@+id/earth_image"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/bitmap"
+
+        app:layout_constraintCircle="@+id/sun_image"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="90dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sun_image"/>
+
+    <TextView
+        android:id="@+id/earth_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Earth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="@id/earth_image"/>
+
+    <ImageView
+        android:id="@+id/mars_image"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/bitmap"
+
+        app:layout_constraintCircle="@+id/sun_image"
+        app:layout_constraintCircleAngle="110"
+        app:layout_constraintCircleRadius="90dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/earth_image"/>
+
+    <TextView
+        android:id="@+id/mars_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Mars"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="@id/mars_image"/>
+
+    <ImageView
+        android:id="@+id/saturn_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/bitmap"
+
+        app:layout_constraintCircle="@+id/sun_image"
+        app:layout_constraintCircleAngle="235"
+        app:layout_constraintCircleRadius="130dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mars_image"/>
+
+    <TextView
+        android:id="@+id/saturn_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="rahul"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="@id/saturn_image"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias=".6"
+        app:layout_constraintHorizontal_bias=".8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/btnClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:textAllCaps="false"
+        android:text="Click This Button Niggers"
+        android:background="@color/colorRed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/saturn_image"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp"/>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "963406540124",
+    "firebase_url": "https://dummy-app-9dcfe.firebaseio.com",
+    "project_id": "dummy-app-9dcfe",
+    "storage_bucket": "dummy-app-9dcfe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963406540124:android:e512b13ba04248d5",
+        "android_client_info": {
+          "package_name": "com.dummyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963406540124-ubsloq9ol3s43j79gr5rnc80gd9d76f4.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "963406540124-ubsloq9ol3s43j79gr5rnc80gd9d76f4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvewJ2XusP_9Pc7aA8cE3NNLIELCQin-g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

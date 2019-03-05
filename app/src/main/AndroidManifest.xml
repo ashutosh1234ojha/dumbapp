@@ -17,23 +17,37 @@
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".background.download.DownloadActivity"
-            android:launchMode="singleTop">
+        <activity
+            android:name=".broadcast.BroadcastReceiverActivity"
+            android:theme="@style/AppTheme.TransparentTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-         <activity android:name=".MainActivity"/>
 
-        <provider android:name=".contentprovider.StudentsProvider"
-                  android:authorities="com.dummyapp.contentprovider.StudentsProvider"/>
+        <!--<activity android:name=".MainActivity"/>-->
+
+        <activity
+            android:name=".launchmode.AActivity"
+            android:taskAffinity="com.dummyapp1"/>
+
+        <activity android:name=".launchmode.BActivity"/>
+        <activity
+            android:name=".launchmode.CActivity"
+            android:launchMode="singleInstance"/>
+
+        <provider
+            android:name=".contentprovider.StudentsProvider"
+            android:authorities="com.dummyapp.contentprovider.StudentsProvider"/>
 
         <service
             android:name=".background.service.MyService"
@@ -51,9 +65,8 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".background.alaram.MyBroadcastManager" >
+        <receiver android:name=".background.alaram.MyBroadcastManager">
         </receiver>
-
 
 
         <!--<receiver android:name=".contacts.ContactActivity$MyBroadCastReceiver">-->
@@ -91,6 +104,36 @@
             android:name="com.facebook.FacebookContentProvider"
             android:authorities="com.facebook.app.FacebookContentProvider1399687486755645"
             android:exported="true"/>
+
+        <activity
+            android:name=".oreo.pip.PictureInPictureActivity"
+            android:launchMode="singleTask"
+            android:supportsPictureInPicture="true"/>
+
+        <service
+            android:name=".jobScheduler.TestJobService"
+            android:label="Word service"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+
+        </service>
+
+        <receiver android:name=".jobScheduler.MyStartServiceReceiver">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
+            <!--</intent-filter>-->
+
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+
+
+        <receiver android:enabled="true" android:name=".broadcast.YourBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -42,4 +42,10 @@
     <dimen name="_156dp">156dp</dimen>
     <dimen name="_220dp">220dp</dimen>
     <dimen name="card_margin">15dp</dimen>
+
+    <!-- Tablet. -->
+
+    <dimen name="width_image">50dp</dimen>
+    <dimen name="height_image">50dp</dimen>
+    <dimen name="image">5dp</dimen>
 </resources>

@@ -21,31 +21,38 @@ public class CustomView extends View {
     private Paint paint;
     public static final int CIRCLE = 0;
     public static final int SQUARE = 1;
+
     public CustomView(final Context context, @Nullable final AttributeSet attrs) {
         super(context, attrs);
 
-        paint=new Paint();
+        paint = new Paint();
 
-        paint.setColor(ContextCompat.getColor(context,R.color.colorBlue));
-        TypedArray a = context.getTheme().obtainStyledAttributes(attrs,R.styleable.CustomView, 0, 0);
+        paint.setColor(ContextCompat.getColor(context, R.color.colorBlue));
+        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CustomView, 0, 0);
 
         try {
             dim = a.getDimension(R.styleable.CustomView_dim, 20f);
-            shape = a.getInteger(R.styleable.CustomView_shape,0);
+            shape = a.getInteger(R.styleable.CustomView_shape, 0);
         } finally {
             a.recycle();
         }
     }
 
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+    }
+
     @Override
     protected void onDraw(final Canvas canvas) {
         super.onDraw(canvas);
-        switch (shape){
+        switch (shape) {
             case CIRCLE:
-                canvas.drawCircle(dim,dim,dim,paint);
+                canvas.drawCircle(dim, dim, dim, paint);
                 break;
             case SQUARE:
-                canvas.drawRect(0,0,dim,dim,paint);
+                canvas.drawRect(0, 0, dim, dim, paint);
                 break;
         }
     }

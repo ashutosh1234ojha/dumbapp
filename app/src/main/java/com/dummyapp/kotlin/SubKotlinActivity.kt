@@ -34,6 +34,9 @@ class SubKotlinActivity : AppCompatActivity(), ClickCallBack {
         val string:String=""
         Log.d("UserName",user.name)
         Log.d("UserAge", "${user.age}")
+
+        var u=UserDetails("w",34)
+//        u.age=32
     }
 
     private fun init() {
@@ -45,10 +48,23 @@ class SubKotlinActivity : AppCompatActivity(), ClickCallBack {
         recyclerView?.layoutManager = layoutManager
         recyclerView?.adapter = recyclerAdapter
         recyclerAdapter.setData(myArray)
+
     }
 
-    override fun setOnClick(position: Int) {
+    override
+    fun setOnClick(position: Int) {
 
         Toast.makeText(this, "clicked " + position, Toast.LENGTH_SHORT).show()
+    }
+
+
+   open class Abc{
+      fun  a(){
+
+        }
+    }
+
+    class Def : Abc(){
+
     }
 }

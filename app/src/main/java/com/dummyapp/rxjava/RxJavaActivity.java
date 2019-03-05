@@ -216,11 +216,14 @@ public class RxJavaActivity extends AppCompatActivity {
 
             }
         };
+
+
     }
 
     private void timer() {
 
         Observable<Integer> observable = Observable.just(2);
+
 
     }
 

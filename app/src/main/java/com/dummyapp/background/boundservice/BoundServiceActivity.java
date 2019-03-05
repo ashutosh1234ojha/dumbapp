@@ -53,6 +53,8 @@ public class BoundServiceActivity extends AppCompatActivity {
 
     }
 
+
+
     @Override
     protected void onStart() {
         super.onStart();
